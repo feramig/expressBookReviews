@@ -54,8 +54,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
             books[isbn].reviews[username].review = review;
         }else{
             books[isbn].reviews[username] = {review}
-        }
-        
+        }      
         res.send(JSON.stringify(book))
     }else{
         res.send("User not logged in")
@@ -73,7 +72,6 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
         }else{
             res.send("Review by user "+username+" not found");
         }
-        
         res.send(JSON.stringify(book))
     }else{
         res.send("User not logged in")
